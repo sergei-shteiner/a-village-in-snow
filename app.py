@@ -10,16 +10,16 @@ LAUNCH_DATE = datetime(2025, 2, 4)
 def index():
     now = datetime.now()
     # Number of days passed since LAUNCH_DATE
-    days_passed = (now - LAUNCH_DATE).days
-    total_days = 60  # Font size will decrease to 0 in 60 days
-
+    days_passed = (now - LAUNCH_DATE).days + 1
+    total_days = 365  # Font size will decrease to 0 in 365 days
+    print(days_passed)
     # If accessed before the launch date, consider 0 days passed
     if days_passed < 0:
         days_passed = 0
 
-    initial_size = 10  # Initial font size in vw
+    initial_size = 8  # Initial font size in vw
 
-    # If 60 or more days have passed, the font size becomes 0
+    # If 365 or more days have passed, the font size becomes 0
     if days_passed >= total_days:
         font_size = 0
     else:
