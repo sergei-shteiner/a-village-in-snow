@@ -4,7 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # Start date of the countdown (replace with the desired date)
-LAUNCH_DATE = datetime(2025, 1, 1)
+LAUNCH_DATE = datetime(2025, 2, 4)
 
 @app.route('/')
 def index():
@@ -63,4 +63,4 @@ def index():
     return render_template_string(template, font_size=font_size)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8080)
